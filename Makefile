@@ -1,7 +1,7 @@
 VERSION=1.1.6
 
 default: zepto
-	@cd $< && git fetch origin --quiet && git checkout --force --quiet v$(VERSION) && npm install && npm run-script dist
+	@cd $< && git fetch origin --quiet && git checkout --force --quiet v$(VERSION) && npm install && export MODULES="zepto event ajax form ie detect fx fx_methods data touch" && npm run-script dist
 	@cp -f $</dist/zepto.js .
 	@echo ";" >> zepto.js
 	@cp -f $</dist/zepto.min.js .
